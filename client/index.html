@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    const eventSource = new EventSource('/api/event')
+
+    console.log(`eventSource`, eventSource)
+
+    eventSource.onmessage = ({data, eventNo}) => {
+     console.log('New message', JSON.parse(data), eventNo);
+    };
+
+
+    // eventSource.onmessage((message) => {
+
+    //     const {data, id, type, retry, eventNo} = message;
+
+    //     const { notificationTitle, isRead, notificationDescription } = data;
+
+    //     const li = document.createElement('li');
+    //     li.innerText = `Title: ${notificationTitle}, eventNo: ${eventNo}`;
+
+    //     document.body.appendChild(li);
+    // })
+
+</script>
